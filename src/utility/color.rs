@@ -19,9 +19,11 @@ mod test {
     fn color_tests() {
         println!("{0}Health: {0} {1}", RED, RESET);
         println!("Sky color: {0}BLUE {0} {1}", BLUE, RESET);
-        println!("Player name: {0}Jack{0}{1} Hitpoints left: {2}100 {2} {1}", CYAN, RESET, RED);
+        println!(
+            "Player name: {0}Jack{0}{1} Hitpoints left: {2}100 {2} {1}",
+            CYAN, RESET, RED
+        );
 
         assert!(true);
-
     }
 }
