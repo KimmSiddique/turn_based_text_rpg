@@ -1,7 +1,7 @@
 use rand::Rng;
 
 // rand_int function that generates a random number within the given range
-fn rand_int(low: i32, high: i32) -> i32 {
+pub fn rand_int(low: i32, high: i32) -> i32 {
     let (low, high) = if low <= high {
         (low, high)
     } else {
