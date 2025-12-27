@@ -9,6 +9,7 @@ pub const CYAN: &str = "\x1b[36m";
 pub const BRIGHT_RED: &str = "\x1b[91m";
 pub const BRIGHT_GREEN: &str = "\x1b[92m";
 pub const BRIGHT_BLUE: &str = "\x1b[94m";
+pub const MAGENTA: &str = "\x1B[35m";
 
 // Unit tests to ensure that colors are working properly
 #[cfg(test)]
