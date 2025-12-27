@@ -6,12 +6,13 @@ pub struct BattlePoints {
 
 impl BattlePoints {
     fn new() -> Self {
-        Self {
-            battle_points: 1
-        }
+        Self { battle_points: 1 }
     }
     pub fn get_bp(&self) -> &i32 {
         &self.battle_points
+    }
+    pub fn get_bp_mut(&mut self) -> &mut Self {
+        self
     }
     pub fn use_bp(&mut self, bp: i32) -> bool {
         if self.battle_points >= bp {
