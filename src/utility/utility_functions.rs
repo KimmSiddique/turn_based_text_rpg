@@ -1,4 +1,4 @@
-use std::io::{self, Write, stdin, stdout};
+use std::io::{self, Write, stdout};
 use std::thread;
 use std::time::Duration;
 
