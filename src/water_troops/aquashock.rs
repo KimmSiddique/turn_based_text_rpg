@@ -1,4 +1,4 @@
-use crate::player::Player;
+use crate::player::BattlePoints;
 use crate::troop_stats::{Element, TroopMoves, TroopStats};
 use crate::utility::{color::*, rand_int::rand_int};
 
@@ -29,8 +29,8 @@ impl Aquashock {
 }
 
 impl TroopMoves for Aquashock {
-    fn move_1(&mut self, player: &mut Player, target: &mut TroopStats) {
-        if player.use_bp(2) {
+    fn move_1(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
+        if player_bp.use_bp(2) {
             println!(
                 "{0} used: {1}Hydro Burst!{2}",
                 self.stats.get_troop_name(),
@@ -48,8 +48,8 @@ impl TroopMoves for Aquashock {
         println!("{0}Not enough BP!{1}", BRIGHT_RED, RESET);
     }
 
-    fn move_2(&mut self, player: &mut Player, target: &mut TroopStats) {
-        if player.use_bp(3) {
+    fn move_2(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
+        if player_bp.use_bp(3) {
             println!(
                 "{0} used: {1}Aqua Pulse!{2}",
                 self.stats.get_troop_name(),
@@ -67,8 +67,8 @@ impl TroopMoves for Aquashock {
         println!("{0}Not enough BP!{1}", BRIGHT_RED, RESET);
     }
 
-    fn move_3(&mut self, player: &mut Player, target: &mut TroopStats) {
-        if player.use_bp(2) {
+    fn move_3(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
+        if player_bp.use_bp(2) {
             println!(
                 "{0} used: {1}Tidal Wave!{2}",
                 self.stats.get_troop_name(),
