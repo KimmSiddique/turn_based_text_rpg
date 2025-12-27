@@ -1,4 +1,5 @@
 pub mod fire_troops;
+pub mod game;
 pub mod player;
 pub mod rock_troops;
 pub mod troop;
