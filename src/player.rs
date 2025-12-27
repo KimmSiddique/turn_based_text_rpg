@@ -1,26 +1,17 @@
 use crate::troop::Troop;
 
-pub struct Player {
-    player_name: String,
-    troops: Vec<Troop>,
+pub struct BattlePoints {
     battle_points: i32,
 }
-impl Player {
-    pub fn new() -> Self {
+
+impl BattlePoints {
+    fn new() -> Self {
         Self {
-            player_name: String::new(),
-            troops: Vec::new(),
-            battle_points: 1,
+            battle_points: 1
         }
-    }
-    pub fn get_player_name(&self) -> &str {
-        &self.player_name
     }
     pub fn get_bp(&self) -> &i32 {
         &self.battle_points
-    }
-    pub fn gain_bp(&mut self, bp: i32) {
-        self.battle_points += bp;
     }
     pub fn use_bp(&mut self, bp: i32) -> bool {
         if self.battle_points >= bp {
@@ -28,6 +19,26 @@ impl Player {
             return true;
         }
         return false;
+    }
+    pub fn gain_bp(&mut self, bp: i32) {
+        self.battle_points += bp;
+    }
+}
+pub struct Player {
+    player_name: String,
+    pub troops: Vec<Troop>,
+    pub battle_points: BattlePoints,
+}
+impl Player {
+    pub fn new() -> Self {
+        Self {
+            player_name: String::new(),
+            troops: Vec::new(),
+            battle_points: BattlePoints::new(),
+        }
+    }
+    pub fn get_player_name(&self) -> &str {
+        &self.player_name
     }
     pub fn set_player_name(&mut self, player_name: String) {
         self.player_name = player_name;
