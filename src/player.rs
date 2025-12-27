@@ -6,9 +6,9 @@ pub struct Player {
     battle_points: i32,
 }
 impl Player {
-    pub fn new(player_name: String) -> Self {
+    pub fn new() -> Self {
         Self {
-            player_name,
+            player_name: String::new(),
             troops: Vec::new(),
             battle_points: 1,
         }
@@ -29,9 +29,18 @@ impl Player {
         }
         return false;
     }
+    pub fn set_player_name(&mut self, player_name: String) {
+        self.player_name = player_name;
+    }
     pub fn display_troops(&self) {
         for troop in self.troops.iter() {
             troop.display_troops();
         }
+    }
+    pub fn add_troop(&mut self, troop: Troop) {
+        self.troops.push(troop);
+    }
+    pub fn get_player_vec_length(&self) -> usize {
+        self.troops.len()
     }
 }
