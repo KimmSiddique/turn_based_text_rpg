@@ -97,7 +97,7 @@ impl Troop {
     }
 }
 
-// Implementation for heal, take_damage and display_moves:
+// Implementation for heal, take_damage and display_moves and stats_mut():
 impl Troop {
     pub fn take_dmg(&mut self, dmg: i32) {
         match self {
@@ -151,6 +151,21 @@ impl Troop {
             Troop::Boulderbash(b) => b.stats.display_moves(),
             Troop::Gravulon(g) => g.stats.display_moves(),
             Troop::Terranox(t) => t.stats.display_moves(),
+        }
+    }
+    pub fn stats_mut(&mut self) -> &mut TroopStats {
+        match self {
+            Troop::Blazefang(b) => &mut b.stats,
+            Troop::Ignivore(i) => &mut i.stats,
+            Troop::Pyrradyn(p) => &mut p.stats,
+
+            Troop::Aquashock(a) => &mut a.stats,
+            Troop::Glacivern(g) => &mut g.stats,
+            Troop::Torrendor(t) => &mut t.stats,
+
+            Troop::Boulderbash(b) => &mut b.stats,
+            Troop::Gravulon(g) => &mut g.stats,
+            Troop::Terranox(t) => &mut t.stats,
         }
     }
 }
