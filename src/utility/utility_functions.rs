@@ -2,6 +2,12 @@ use std::io::{self, Write, stdout};
 use std::thread;
 use std::time::Duration;
 
+use crate::water_troops::{aquashock::Aquashock, glacivern::Glacivern, torrendor::Torrendor};
+use crate::rock_troops::{boulderbash::Boulderbash, gravulon::Gravulon, terranox::Terranox};
+use crate::fire_troops::{blazefang::Blazefang, ignivore::Ignivore, pyrradyn::Pyrradyn};
+use crate::troop::Troop;
+use crate::player::Player;
+
 pub fn thread_sleep_for_ms(duration: u64) {
     thread::sleep(Duration::from_millis(duration));
 }
@@ -45,6 +51,23 @@ pub fn take_string_input(message: &str) -> String {
         }
     }
 }
+pub fn add_troop(choice: i32, player: &mut Player) {
+        match choice {
+            // Fire-troops
+            1 => player.add_troop(Troop::Blazefang(Blazefang::new())),
+            2 => player.add_troop(Troop::Ignivore(Ignivore::new())),
+            3 => player.add_troop(Troop::Pyrradyn(Pyrradyn::new())),
+            // Water-troops
+            4 => player.add_troop(Troop::Aquashock(Aquashock::new())),
+            5 => player.add_troop(Troop::Glacivern(Glacivern::new())),
+            6 => player.add_troop(Troop::Torrendor(Torrendor::new())),
+            // Rock-troops
+            7 => player.add_troop(Troop::Boulderbash(Boulderbash::new())),
+            8 => player.add_troop(Troop::Terranox(Terranox::new())),
+            9 => player.add_troop(Troop::Gravulon(Gravulon::new())),
+            _ => eprintln!("Invalid choice"),
+        }
+    }
 
 #[cfg(test)]
 mod test {
