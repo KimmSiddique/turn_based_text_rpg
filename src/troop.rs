@@ -1,5 +1,5 @@
 use crate::fire_troops::{blazefang::Blazefang, ignivore::Ignivore, pyrradyn::Pyrradyn};
-use crate::player::Player;
+use crate::player::BattlePoints;
 use crate::rock_troops::{boulderbash::Boulderbash, gravulon::Gravulon, terranox::Terranox};
 use crate::troop_stats::{TroopMoves, TroopStats};
 use crate::water_troops::{aquashock::Aquashock, glacivern::Glacivern, torrendor::Torrendor};
@@ -41,58 +41,58 @@ impl Troop {
             Troop::Terranox(t) => t.stats.display_troops(),
         }
     }
-    pub fn use_move_1(&mut self, player: &mut Player, target: &mut TroopStats) {
+    pub fn use_move_1(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
         match self {
             // Fire-troops:
-            Troop::Blazefang(b) => b.move_1(player, target),
-            Troop::Ignivore(i) => i.move_1(player, target),
-            Troop::Pyrradyn(p) => p.move_1(player, target),
+            Troop::Blazefang(b) => b.move_1(player_bp, target),
+            Troop::Ignivore(i) => i.move_1(player_bp, target),
+            Troop::Pyrradyn(p) => p.move_1(player_bp, target),
 
             // Water-troops:
-            Troop::Aquashock(a) => a.move_1(player, target),
-            Troop::Glacivern(g) => g.move_1(player, target),
-            Troop::Torrendor(t) => t.move_1(player, target),
+            Troop::Aquashock(a) => a.move_1(player_bp, target),
+            Troop::Glacivern(g) => g.move_1(player_bp, target),
+            Troop::Torrendor(t) => t.move_1(player_bp, target),
 
             // Rock-troops:
-            Troop::Boulderbash(b) => b.move_1(player, target),
-            Troop::Gravulon(g) => g.move_1(player, target),
-            Troop::Terranox(t) => t.move_1(player, target),
+            Troop::Boulderbash(b) => b.move_1(player_bp, target),
+            Troop::Gravulon(g) => g.move_1(player_bp, target),
+            Troop::Terranox(t) => t.move_1(player_bp, target),
         }
     }
-    pub fn use_move_2(&mut self, player: &mut Player, target: &mut TroopStats) {
+    pub fn use_move_2(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
         match self {
             // Fire-troops:
-            Troop::Blazefang(b) => b.move_2(player, target),
-            Troop::Ignivore(i) => i.move_2(player, target),
-            Troop::Pyrradyn(p) => p.move_2(player, target),
+            Troop::Blazefang(b) => b.move_2(player_bp, target),
+            Troop::Ignivore(i) => i.move_2(player_bp, target),
+            Troop::Pyrradyn(p) => p.move_2(player_bp, target),
 
             // Water-troops:
-            Troop::Aquashock(a) => a.move_2(player, target),
-            Troop::Glacivern(g) => g.move_2(player, target),
-            Troop::Torrendor(t) => t.move_2(player, target),
+            Troop::Aquashock(a) => a.move_2(player_bp, target),
+            Troop::Glacivern(g) => g.move_2(player_bp, target),
+            Troop::Torrendor(t) => t.move_2(player_bp, target),
 
             // Rock-troops:
-            Troop::Boulderbash(b) => b.move_2(player, target),
-            Troop::Gravulon(g) => g.move_2(player, target),
-            Troop::Terranox(t) => t.move_2(player, target),
+            Troop::Boulderbash(b) => b.move_2(player_bp, target),
+            Troop::Gravulon(g) => g.move_2(player_bp, target),
+            Troop::Terranox(t) => t.move_2(player_bp, target),
         }
     }
-    pub fn use_move_3(&mut self, player: &mut Player, target: &mut TroopStats) {
+    pub fn use_move_3(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
         match self {
             // Fire-troops:
-            Troop::Blazefang(b) => b.move_3(player, target),
-            Troop::Ignivore(i) => i.move_3(player, target),
-            Troop::Pyrradyn(p) => p.move_3(player, target),
+            Troop::Blazefang(b) => b.move_3(player_bp, target),
+            Troop::Ignivore(i) => i.move_3(player_bp, target),
+            Troop::Pyrradyn(p) => p.move_3(player_bp, target),
 
             // Water-troops:
-            Troop::Aquashock(a) => a.move_3(player, target),
-            Troop::Glacivern(g) => g.move_3(player, target),
-            Troop::Torrendor(t) => t.move_3(player, target),
+            Troop::Aquashock(a) => a.move_3(player_bp, target),
+            Troop::Glacivern(g) => g.move_3(player_bp, target),
+            Troop::Torrendor(t) => t.move_3(player_bp, target),
 
             // Rock-troops:
-            Troop::Boulderbash(b) => b.move_3(player, target),
-            Troop::Gravulon(g) => g.move_3(player, target),
-            Troop::Terranox(t) => t.move_3(player, target),
+            Troop::Boulderbash(b) => b.move_3(player_bp, target),
+            Troop::Gravulon(g) => g.move_3(player_bp, target),
+            Troop::Terranox(t) => t.move_3(player_bp, target),
         }
     }
 }

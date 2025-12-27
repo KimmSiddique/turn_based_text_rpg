@@ -1,10 +1,10 @@
-use crate::player::Player;
+use crate::player::BattlePoints;
 use crate::utility::color::*;
 
 pub trait TroopMoves {
-    fn move_1(&mut self, player: &mut Player, target: &mut TroopStats);
-    fn move_2(&mut self, player: &mut Player, target: &mut TroopStats);
-    fn move_3(&mut self, player: &mut Player, target: &mut TroopStats);
+    fn move_1(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats);
+    fn move_2(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats);
+    fn move_3(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats);
 }
 
 pub struct TroopStats {
