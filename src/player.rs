@@ -31,7 +31,7 @@ impl Player {
     }
     pub fn display_troops(&self) {
         for troop in self.troops.iter() {
-            troop.display();
+            troop.display_troops();
         }
     }
 }
