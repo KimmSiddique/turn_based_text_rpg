@@ -7,6 +7,7 @@ use crate::player::Player;
 use crate::rock_troops::{boulderbash::Boulderbash, gravulon::Gravulon, terranox::Terranox};
 use crate::troop::Troop;
 use crate::water_troops::{aquashock::Aquashock, glacivern::Glacivern, torrendor::Torrendor};
+use crate::utility::color::{GREEN, RESET};
 
 pub fn thread_sleep_for_ms(duration: u64) {
     thread::sleep(Duration::from_millis(duration));
@@ -51,6 +52,7 @@ pub fn take_string_input(message: &str) -> String {
         }
     }
 }
+
 pub fn add_troop(choice: i32, player: &mut Player) {
     match choice {
         // Fire-troops
@@ -67,6 +69,12 @@ pub fn add_troop(choice: i32, player: &mut Player) {
         9 => player.add_troop(Troop::Gravulon(Gravulon::new())),
         _ => eprintln!("Invalid choice"),
     }
+}
+
+pub fn wait_for_enter() {
+    let mut input = String::new();
+    println!("{GREEN}\nPress Enter to continue...{RESET}");
+    let _ = io::stdin().read_line(&mut input);
 }
 
 #[cfg(test)]
