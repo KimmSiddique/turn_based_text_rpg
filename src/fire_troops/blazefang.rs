@@ -1,4 +1,4 @@
-use crate::player::Player;
+use crate::player::BattlePoints;
 use crate::troop_stats::{Element, TroopMoves, TroopStats};
 use crate::utility::{color::*, rand_int::rand_int};
 
@@ -29,8 +29,8 @@ impl Blazefang {
 }
 
 impl TroopMoves for Blazefang {
-    fn move_1(&mut self, player: &mut Player, target: &mut TroopStats) {
-        if player.use_bp(2) {
+    fn move_1(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
+        if player_bp.use_bp(2) {
             println!(
                 "{0} used: {1}Fire-Scorch!{2}",
                 self.stats.get_troop_name(),
@@ -46,8 +46,8 @@ impl TroopMoves for Blazefang {
         }
         println!("{0}Not enough BP!{1}", BRIGHT_RED, RESET);
     }
-    fn move_2(&mut self, player: &mut Player, target: &mut TroopStats) {
-        if player.use_bp(2) {
+    fn move_2(&mut self, player_bp: &mut BattlePoints, target: &mut TroopStats) {
+        if player_bp.use_bp(2) {
             println!(
                 "{0} used: {1}Inferno-Blaze!{2}",
                 self.stats.get_troop_name(),
@@ -63,8 +63,8 @@ impl TroopMoves for Blazefang {
         }
         println!("{0}Not enough BP!{1}", BRIGHT_RED, RESET);
     }
-    fn move_3(&mut self, player: &mut Player, _target: &mut TroopStats) {
-        if player.use_bp(2) {
+    fn move_3(&mut self, player_bp: &mut BattlePoints, _target: &mut TroopStats) {
+        if player_bp.use_bp(2) {
             println!(
                 "{0} used: {1}Blaze!{2}",
                 self.stats.get_troop_name(),
@@ -74,7 +74,7 @@ impl TroopMoves for Blazefang {
             let heal_amount = rand_int(30, 50);
             self.stats.heal(heal_amount);
             let random_bp_gain = rand_int(0, 2);
-            player.gain_bp(random_bp_gain);
+            player_bp.gain_bp(random_bp_gain);
             return;
         }
         println!("{0}Not enough BP!{1}", BRIGHT_RED, RESET);
