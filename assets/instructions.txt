@@ -1,0 +1,36 @@
+=================================================================================================
+-------------------------------------------INSTRUCTIONS------------------------------------------
+=================================================================================================
+
+-> This is a turn based RPG game that took inspiration from Pokemon style battles.
+There are 2 players, that can choose from a list of 9 different troops. They each can have
+3 troops each, with 1 active troop that battles. When the active troop is defeated, it will
+switch to the next troop available. Player who is first to defeat all the opponent's troops wins.
+
+Players can choose 3 different types of troops, fire, water and rock. 
+It follows a cyclic relationship in power, where fire deals double damage to rock, rock deals
+double damage to water, and water deals double damage to fire. 
+
+Players start off with 1 battlepoint, and as the rounds progress, they gain battlepoints. After
+round 5, they gain 2 battlepoints each. Battlepoints are consumed to use the moves of their
+troops. Different troops are equipped with different moves that have varying costs.
+Players must strategically use their battlepoints if they are to win.
+
+
+
+                             === TROOPS AVAILABLE ===
+                             1. Blazefang   | Type: Fire 
+                             2. Ignivore    | Type: Fire
+                             3. Pyrradyn    | Type: Fire
+                             4. Aquashock   | Type: Water
+                             5. Glacivern   | Type: Water
+                             6. Torrendor   | Type: Water 
+                             7. Boulderbash | Type: Rock 
+                             8. Gravulon    | Type: Rock 
+                             9. Terranox    | Type: Rock 
+
+
+For the simplicity of the scope of the project, players are allowed to take duplicated troop
+types, for instance a player can take a full team of Blazefangs. Troops are also not exclusive
+to each player, players may battle each other using the same troops. 
+
