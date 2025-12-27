@@ -1,9 +1,14 @@
-use std::io::{self, Write};
+use std::io::{self, Write, stdin, stdout};
 use std::thread;
 use std::time::Duration;
 
 pub fn thread_sleep_for_ms(duration: u64) {
     thread::sleep(Duration::from_millis(duration));
+}
+
+pub fn clear_screen() {
+    print!("\x1B[2J\x1B[1;1H");
+    stdout().flush().expect("Failed to flush stdout");
 }
 
 pub fn take_int_input(message: &str) -> i32 {
@@ -59,4 +64,3 @@ mod test {
         assert!(true);
     }
 }
-
