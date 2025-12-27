@@ -70,22 +70,36 @@ impl TroopStats {
             println!("{} | BP required: {}", move_name, bp);
         }
     }
-    // WILL HAVE TO MODIFY THIS LATER TO ADD DEFENSE...
+
     pub fn take_dmg(&mut self, dmg: i32) {
-        self.health -= dmg;
+        
+        let scaling: f32 = 100.0 / (100.0 + self.defense as f32);
+        let actual_dmg: i32 = (dmg as f32 * scaling) as i32;
+
+        self.health -= actual_dmg;
+
         if self.health <= 0 {
+            self.health = 0;
             self.is_alive = false;
-            println!("{} has been defeated!", self.get_troop_name());
+            println!(
+                "{}{} has been defeated!{}",
+                CYAN,
+                self.get_troop_name(),
+                RESET
+            );
             return;
         }
 
         println!(
-            "{0} took {1}{dmg}{1} damage!{2}",
+            "{} took {}{}{} damage!{}",
             self.get_troop_name(),
             RED,
+            actual_dmg,
+            RESET,
             RESET
         );
     }
+
     pub fn heal(&mut self, amount: i32) {
         self.health += amount;
         if self.get_health() > self.get_max_health() {
