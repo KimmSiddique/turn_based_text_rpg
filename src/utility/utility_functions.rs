@@ -6,8 +6,8 @@ use crate::fire_troops::{blazefang::Blazefang, ignivore::Ignivore, pyrradyn::Pyr
 use crate::player::Player;
 use crate::rock_troops::{boulderbash::Boulderbash, gravulon::Gravulon, terranox::Terranox};
 use crate::troop::Troop;
-use crate::water_troops::{aquashock::Aquashock, glacivern::Glacivern, torrendor::Torrendor};
 use crate::utility::color::{GREEN, RESET};
+use crate::water_troops::{aquashock::Aquashock, glacivern::Glacivern, torrendor::Torrendor};
 
 pub fn thread_sleep_for_ms(duration: u64) {
     thread::sleep(Duration::from_millis(duration));
@@ -78,7 +78,7 @@ pub fn wait_for_enter() {
 }
 
 pub fn remove_defeated_troops(player: &mut Player) {
-    player.troops.retain(|troop | troop.get_is_alive());
+    player.troops.retain(|troop| troop.get_is_alive());
 }
 
 #[cfg(test)]
