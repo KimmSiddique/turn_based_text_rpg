@@ -52,8 +52,8 @@ impl TroopStats {
     pub fn get_element(&self) -> &Element {
         &self.element
     }
-    pub fn get_is_alive(&self) -> &bool {
-        &self.is_alive
+    pub fn get_is_alive(&self) -> bool {
+        self.is_alive
     }
     pub fn get_element_to_string(&self) -> String {
         match &self.element {
@@ -72,7 +72,6 @@ impl TroopStats {
     }
 
     pub fn take_dmg(&mut self, dmg: i32) {
-        
         let scaling: f32 = 100.0 / (100.0 + self.defense as f32);
         let actual_dmg: i32 = (dmg as f32 * scaling) as i32;
 
