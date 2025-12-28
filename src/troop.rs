@@ -183,4 +183,64 @@ impl Troop {
             Troop::Terranox(t) => t.stats.get_is_alive(),
         }
     }
+    pub fn stats_immut(&self) -> &TroopStats {
+        match self {
+            Troop::Blazefang(b) => &b.stats,
+            Troop::Ignivore(i) => &i.stats,
+            Troop::Pyrradyn(p) => &p.stats,
+
+            Troop::Aquashock(a) => &a.stats,
+            Troop::Glacivern(g) => &g.stats,
+            Troop::Torrendor(t) => &t.stats,
+
+            Troop::Boulderbash(b) => &b.stats,
+            Troop::Gravulon(g) => &g.stats,
+            Troop::Terranox(t) => &t.stats,
+        }
+    }
+    pub fn get_troop_name(&self) -> &str {
+        match self {
+            Troop::Blazefang(b) => b.stats.get_troop_name(),
+            Troop::Ignivore(i) => i.stats.get_troop_name(),
+            Troop::Pyrradyn(p) => p.stats.get_troop_name(),
+
+            Troop::Aquashock(a) => a.stats.get_troop_name(),
+            Troop::Glacivern(g) => g.stats.get_troop_name(),
+            Troop::Torrendor(t) => t.stats.get_troop_name(),
+
+            Troop::Boulderbash(b) => b.stats.get_troop_name(),
+            Troop::Gravulon(g) => g.stats.get_troop_name(),
+            Troop::Terranox(t) => t.stats.get_troop_name(),
+        }
+    }
+    pub fn get_health(&self) -> &i32 {
+        match self {
+            Troop::Blazefang(b) => b.stats.get_health(),
+            Troop::Ignivore(i) => i.stats.get_health(),
+            Troop::Pyrradyn(p) => p.stats.get_health(),
+
+            Troop::Aquashock(a) => a.stats.get_health(),
+            Troop::Glacivern(g) => g.stats.get_health(),
+            Troop::Torrendor(t) => t.stats.get_health(),
+
+            Troop::Boulderbash(b) => b.stats.get_health(),
+            Troop::Gravulon(g) => g.stats.get_health(),
+            Troop::Terranox(t) => t.stats.get_health(),
+        }
+    }
+    pub fn get_max_health(&self) -> &i32 {
+        match self {
+            Troop::Blazefang(b) => b.stats.get_max_health(),
+            Troop::Ignivore(i) => i.stats.get_max_health(),
+            Troop::Pyrradyn(p) => p.stats.get_max_health(),
+
+            Troop::Aquashock(a) => a.stats.get_max_health(),
+            Troop::Glacivern(g) => g.stats.get_max_health(),
+            Troop::Torrendor(t) => t.stats.get_max_health(),
+
+            Troop::Boulderbash(b) => b.stats.get_max_health(),
+            Troop::Gravulon(g) => g.stats.get_max_health(),
+            Troop::Terranox(t) => t.stats.get_max_health(),
+        }
+    }
 }
