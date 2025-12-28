@@ -168,4 +168,19 @@ impl Troop {
             Troop::Terranox(t) => &mut t.stats,
         }
     }
+    pub fn get_is_alive(&self) -> bool {
+        match self {
+            Troop::Blazefang(b) => b.stats.get_is_alive(),
+            Troop::Ignivore(i) => i.stats.get_is_alive(),
+            Troop::Pyrradyn(p) => p.stats.get_is_alive(),
+
+            Troop::Aquashock(a) => a.stats.get_is_alive(),
+            Troop::Glacivern(g) => g.stats.get_is_alive(),
+            Troop::Torrendor(t) => t.stats.get_is_alive(),
+
+            Troop::Boulderbash(b) => b.stats.get_is_alive(),
+            Troop::Gravulon(g) => g.stats.get_is_alive(),
+            Troop::Terranox(t) => t.stats.get_is_alive(),
+        }
+    }
 }
