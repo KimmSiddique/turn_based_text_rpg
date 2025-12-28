@@ -77,6 +77,10 @@ pub fn wait_for_enter() {
     let _ = io::stdin().read_line(&mut input);
 }
 
+pub fn remove_defeated_troops(player: &mut Player) {
+    player.troops.retain(|troop | troop.get_is_alive());
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
